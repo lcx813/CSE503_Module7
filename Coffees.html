@@ -1,0 +1,29 @@
+<a href="index.html">Back To Home</a>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <!--Sidebar content-->
+
+        Search: <input ng-model="query">
+
+      </div>
+      <div class="col-md-10">
+
+
+
+<p>Reviews:&nbsp;&nbsp;Brand:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Coffee Title:&nbsp;&nbsp;&nbsp;&nbsp;Country:</p>
+
+<tr class="coffees">
+<li ng-repeat="coffee in coffees | filter:query | orderBy:orderProp">
+<!--<a href="#/coffees/{{coffee.name}}">Reviews</a>-->
+
+<a ng-href="#/reviews/{{coffee.id}}" ng-click="onReview(coffee.id)">Reviews</a>
+<td>{{coffee.brand}}</td>
+<td>{{coffee.name}}</td>
+<td>{{coffee.country}}</td>
+</li>
+</tr>
+
+      </div>
+    </div>
+  </div>

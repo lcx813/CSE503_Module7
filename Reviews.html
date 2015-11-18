@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="CoffeeReviewApp">
+<head>
+ <style type="TEXT/css">
+  body {
+        background-color:#FFFFF0;
+ }
+</style>
+  <meta charset="utf-8">
+  <title>My Coffee Review</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>  
+  <script src="app.js"></script>
+</head>
+
+<body ng-controller="CoffeeListCtrl">
+
+
+<a href="index.html">Back To Home</a>
+<br>
+<tr>
+<td>Reviews for {{currentCoffee.name}}:</td>
+</tr>
+<br>
+<tr>
+<td>Reviewer:</td>
+<td>Comment:</td>
+<td>Rating:</td>
+</tr>
+<tr>
+<!--{{currentCoffee.reviews[0].rating}}<br>
+{{currentCoffee.reviews[0].comment}}<br>
+{{currentCoffee.reviews[0].reviewer}}<br>
+-->
+<li ng-repeat="review in currentCoffee.reviews | filter:query ">
+<td>{{review.reviewer}}</td>
+<td>{{review.comment}}</td>
+<td>{{review.rating}}</td>
+ </body>
+</html>
